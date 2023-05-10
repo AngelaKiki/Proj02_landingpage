@@ -85,16 +85,15 @@ function linkAction(){
 
 menuLinks.forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault(); // 阻止默认跳转行为
-    const targetId = this.getAttribute('aria-controls'); // 获取对应的 section 的 ID
-    const targetSection = document.getElementById(targetId); // 根据 ID 获取对应的 section 元素
-    const targetTop = targetSection.offsetTop-100; // 获取目标 section 元素的顶部距离
+    e.preventDefault(); 
+    const targetId = this.getAttribute('aria-controls'); 
+    const targetSection = document.getElementById(targetId); 
+    const targetTop = targetSection.offsetTop-100; // 
 
     window.scrollTo({
-      top: targetTop, // 滚动到目标 section 元素的位置
-      behavior: 'smooth' // 平滑滚动
+      top: targetTop, 
+      behavior: 'smooth' 
     });
-
   });
   link.addEventListener('click', linkAction);
 });
